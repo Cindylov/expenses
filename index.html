@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Budget</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #333;
+      color: white;
+    }
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-section {
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    input, button {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <div class="form-section">
+      <h2 class="text-center">Monthly Budget</h2>
+      <form id="budgetForm">
+        <input type="number" class="form-control" id="income" placeholder="Insert Your Income" required>
+        <input type="text" class="form-control" id="name" placeholder="Insert Your Name" required>
+        <input type="text" class="form-control" id="goals" placeholder="Insert Your Goals" required>
+        <button type="submit" class="btn btn-warning btn-block">Start Your Calculation</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('budgetForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let income = document.getElementById('income').value;
+      localStorage.setItem('income', income);
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
