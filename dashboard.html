@@ -46,13 +46,13 @@
   </div>
 
   <script>
-    let income = localStorage.getItem('income');
+    let income = sessionStorage.getItem('income');
     document.getElementById('totalIncome').innerText = income;
 
     function addExpense() {
       let expense = prompt('Enter Expense Amount');
-      let totalExpenses = Number(localStorage.getItem('totalExpenses') || 0) + Number(expense);
-      localStorage.setItem('totalExpenses', totalExpenses);
+      let totalExpenses = Number(sessionStorage.getItem('totalExpenses') || 0) + Number(expense);
+      sessionStorage.setItem('totalExpenses', totalExpenses);
 
       let percentage = Math.min((totalExpenses / income) * 100, 100);
       document.getElementById('progressCircle').style.background = `conic-gradient(#4caf50 0% ${percentage}%, #ddd ${percentage}% 100%)`;

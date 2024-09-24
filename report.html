@@ -21,11 +21,18 @@
     <p>Total Income: <span id="totalIncomeReport"></span></p>
     <p>Total Expenses: <span id="totalExpensesReport"></span></p>
     <p>Remaining Balance: <span id="remainingBalance"></span></p>
+
+    <div class="d-flex"></div>
+      <a href="index.html" class="btn btn-warning mt-2" tabindex="-1" role="button" >Home</a>
+      <a href="dashboard.html" class="btn btn-warning mt-2" tabindex="-1" role="button" >Add More Expense</a>
+    </div>
   </div>
 
+ 
+
   <script>
-    let totalIncome = localStorage.getItem('income');
-    let totalExpenses = localStorage.getItem('totalExpenses') || 0;
+    let totalIncome = sessionStorage.getItem('income');
+    let totalExpenses = sessionStorage.getItem('totalExpenses') || 0;
     let remainingBalance = totalIncome - totalExpenses;
 
     document.getElementById('totalIncomeReport').innerText = totalIncome;

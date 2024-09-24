@@ -43,7 +43,7 @@
     document.getElementById('budgetForm').addEventListener('submit', function(event) {
       event.preventDefault();
       let income = document.getElementById('income').value;
-      localStorage.setItem('income', income);
+      sessionStorage.setItem('income', income);
       window.location.href = 'dashboard.html';
     });
   </script>
